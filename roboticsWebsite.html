@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LASA Robotics - Team 418 Purple Haze</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6a0dad', /* LASA Purple */
+                        secondary: '#4b0082', /* Darker Purple */
+                        accent: '#ffd700', /* Gold/Yellow often used with Purple */
+                        dark: '#1a1a1a',
+                        light: '#f4f4f4',
+                        'purple-light': '#f3e5f5'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+       
+        body {
+            font-family: 'Open Sans', sans-serif; /* Clean font similar to the reference */
+            scroll-behavior: smooth;
+        }
+       
+        /* Hero Background - Darkened for text readability */
+        .hero-bg {
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(106, 13, 173, 0.6)), url('https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+        }
+
+        .section-card {
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 4px solid #6a0dad;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn-purple {
+            background-color: #6a0dad;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .btn-purple:hover {
+            background-color: #4b0082;
+            transform: scale(1.02);
+        }
+       
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark flex flex-col min-h-screen">
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="scrollToSection('home')">
+                        <div class="bg-primary text-white p-2 rounded-full mr-3">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-bold text-dark tracking-tight">LASA Robotics</span>
+                            <span class="text-xs text-primary font-semibold tracking-widest uppercase">Team 418 &bull; Purple Haze</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex md:items-center md:space-x-6">
+                    <button onclick="scrollToSection('home')" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Home</button>
+                    <button onclick="scrollToSection('mission')" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Team</button>
+                    <button onclick="scrollToSection('competition')" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Competition</button>
+                    <button onclick="scrollToSection('outreach')" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Outreach</button>
+                    <button onclick="scrollToSection('support')" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Sponsors</button>
+                    <a href="#contact" class="bg-primary hover:bg-secondary text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 shadow-md">Contact Us</a>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg h-screen flex items-center justify-center relative">
+        <div class="text-center text-white z-10 px-4 max-w-5xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up tracking-tight">LASA Robotics</h1>
+            <p class="text-xl md:text-3xl mb-10 font-light opacity-90 animate-fade-in-up" style="animation-delay: 0.2s;">
+                Fostering growth through mentorship and experiential learning.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fade-in-up" style="animation-delay: 0.4s;">
+                <button onclick="scrollToSection('mission')" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg border-2 border-primary">
+                    Our Mission
+                </button>
+                <button onclick="scrollToSection('competition')" class="bg-transparent hover:bg-white hover:text-primary text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 border-2 border-white">
+                    2025 Season
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl opacity-75"></i>
+        </div>
+    </section>
+
+    <section id="mission" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-primary mb-6">Our Mission</h2>
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    LASA Robotics fosters growth through mentorship and experiential learning, empowering a community where students can lead and collaborate with confidence.
+                </p>
+            </div>
+            <hr class="border-t-2 border-gray-100 w-1/3 mx-auto my-12">
+            <div>
+                <h2 class="text-3xl font-bold text-primary mb-6">Our Vision</h2>
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    To develop resilient leaders, prepared for real world challenges, through a team culture rooted in innovation and inclusivity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="competition" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+               
+                <div class="section-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full">
+                    <div class="h-56 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Meeting" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-primary opacity-20 hover:opacity-10 transition"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-dark mb-4 uppercase tracking-wide">Team</h3>
+                            <p class="text-gray-600 mb-6">Learn about the Past, Present and Aspirational Future of one of the first high school robotics teams in Austin, Texas.</p>
+                        </div>
+                        <button class="text-primary font-bold hover:text-secondary flex items-center uppercase text-sm tracking-wider">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full">
+                    <div class="h-56 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Robotics Competition" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-primary opacity-20 hover:opacity-10 transition"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-dark mb-4 uppercase tracking-wide">Competition</h3>
+                            <p class="text-gray-600 mb-6">One of the best ways to reinforce STEM education is by applying it. That's why we compete in FRC robotics competitions.</p>
+                        </div>
+                        <button class="text-primary font-bold hover:text-secondary flex items-center uppercase text-sm tracking-wider">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="outreach" class="section-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full">
+                    <div class="h-56 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community Outreach" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-primary opacity-20 hover:opacity-10 transition"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-dark mb-4 uppercase tracking-wide">Community</h3>
+                            <p class="text-gray-600 mb-6">At LASA Robotics, we believe that it's not enough for just our members to enjoy STEM. We want everyone to get the chance!</p>
+                        </div>
+                        <button class="text-primary font-bold hover:text-secondary flex items-center uppercase text-sm tracking-wider">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="support" class="section-card bg-white rounded-xl shadow-sm overflow-hidden flex flex-col h-full">
+                    <div class="h-56 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Support Us" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-primary opacity-20 hover:opacity-10 transition"></div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-dark mb-4 uppercase tracking-wide">Support Us</h3>
+                            <p class="text-gray-600 mb-6">We work hard to achieve our mission, and we could not do it without our supporters. You, too, can help inspire others!</p>
+                        </div>
+                        <button class="text-primary font-bold hover:text-secondary flex items-center uppercase text-sm tracking-wider">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold mb-2">25+</div>
+                    <p class="text-sm uppercase tracking-widest opacity-80">Years Active</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">3000+</div>
+                    <p class="text-sm uppercase tracking-widest opacity-80">Students Reached</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <p class="text-sm uppercase tracking-widest opacity-80">Team Members</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">100%</div>
+                    <p class="text-sm uppercase tracking-widest opacity-80">Passion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+               
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Contact Us</h3>
+                    <div class="space-y-4 text-gray-400">
+                        <div>
+                            <p class="font-semibold text-white">Workshop Location</p>
+                            <p>Liberal Arts and Science Academy</p>
+                            <p>1012 Arthur Stiles Road</p>
+                            <p>Austin, TX 78721</p>
+                        </div>
+                        <div class="mt-4">
+                            <p class="font-semibold text-white">Mailing Address</p>
+                            <p>LASA Robotics</p>
+                            <p>5900 Balcones Drive #8096</p>
+                            <p>Austin, TX 78731</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Team History</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FRC Competition</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sponsor Packet</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Outreach Events</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Follow Us</h3>
+                    <p class="text-gray-400 mb-6">Stay up to date with Purple Haze.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 LASA Robotics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Simple intersection observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    entry.target.style.opacity = 1;
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-card').forEach(el => {
+            el.style.opacity = 0; // Hide initially
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
