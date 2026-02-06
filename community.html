@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - LASA Robotics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6a0dad', /* LASA Purple */
+                        secondary: '#4b0082', /* Darker Purple */
+                        accent: '#ffd700', /* Gold/Yellow */
+                        dark: '#1a1a1a',
+                        light: '#f4f4f4',
+                        'purple-light': '#f3e5f5'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .value-card {
+            transition: transform 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark flex flex-col min-h-screen">
+
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
+                        <div class="bg-primary text-white p-2 rounded-full mr-3">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-xl font-bold text-dark tracking-tight">LASA Robotics</span>
+                            <span class="text-xs text-primary font-semibold tracking-widest uppercase">Team 418 &bull; Purple Haze</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex md:items-center md:space-x-1">
+                    <a href="index.html" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Home</a>
+                    
+                    <div class="relative group">
+                        <button class="text-gray-600 group-hover:text-primary px-3 py-2 text-sm font-semibold transition flex items-center">
+                            Team <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-left z-50 border-t-4 border-primary">
+                            <div class="py-1">
+                                <a href="team.html#frc418" class="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-primary">
+                                    <span class="font-bold block">FRC 418</span>
+                                    <span class="text-xs text-gray-500">Purple Haze (Varsity)</span>
+                                </a>
+                                <div class="border-t border-gray-100"></div>
+                                <div class="px-4 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">FTC Teams</div>
+                                <a href="team.html#ftc4290" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-primary">
+                                    <span class="font-bold">FTC 4290</span> - Bot-tleship
+                                </a>
+                                <a href="team.html#ftc5998" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-primary">
+                                    <span class="font-bold">FTC 5998</span> - Such A Pain
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="competition.html" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Competition</a>
+                    <a href="outreach.html" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Outreach</a>
+                    <a href="community.html" class="text-primary px-3 py-2 text-sm font-semibold transition">Community</a>
+                    <a href="support.html" class="text-gray-600 hover:text-primary px-3 py-2 text-sm font-semibold transition">Sponsors</a>
+                    <a href="#contact" class="ml-4 bg-primary hover:bg-secondary text-white px-5 py-2 rounded-full text-sm font-medium transition duration-300 shadow-md">Contact Us</a>
+                </div>
+
+                <div class="flex md:hidden items-center">
+                    <button class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-20 bg-white flex-grow animate-fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16">
+                <span class="text-accent font-bold tracking-widest uppercase text-sm">Building Bridges</span>
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mt-2 mb-6">Our Community</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    At LASA Robotics, we believe that it's not enough for just our members to enjoy STEM. We want everyone to get the chance.
+                </p>
+            </div>
+
+            <div class="bg-purple-50 rounded-3xl p-8 md:p-16 mb-20">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-3/5">
+                        <h2 class="text-3xl font-bold text-dark mb-4">The Shine Partnership</h2>
+                        <div class="w-20 h-1 bg-accent mb-6"></div>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                            We are proud to partner with Trinity Episcopal School's <strong>Shine program</strong> to support families from under-resourced communities in Austin.
+                        </p>
+                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                            Our students volunteer to combat summer learning loss by providing dynamic STEM curriculum and robotics demonstrations at no cost to families. This partnership allows us to reach students who might not otherwise have access to robotics education.
+                        </p>
+                        <a href="outreach.html" class="inline-block text-primary font-bold hover:text-secondary border-b-2 border-primary pb-1">
+                            Learn more about our Camps
+                        </a>
+                    </div>
+                    <div class="md:w-2/5 flex justify-center">
+                        <div class="relative w-64 h-64 bg-white rounded-full flex items-center justify-center shadow-xl border-4 border-white">
+                            <i class="fas fa-hand-holding-heart text-6xl text-primary opacity-80"></i>
+                            <div class="absolute -bottom-4 -right-4 bg-accent text-dark font-bold px-4 py-2 rounded-full shadow">
+                                Since 2018
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark">Pillars of Our Community</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div class="value-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3 text-center">Mentorship</h3>
+                    <p class="text-gray-600 text-center">
+                        We connect high schoolers with industry professionals for guidance, while simultaneously having our high schoolers mentor elementary and middle school students.
+                    </p>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-accent">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6 text-yellow-600">
+                        <i class="fas fa-handshake-angle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3 text-center">Volunteering</h3>
+                    <p class="text-gray-600 text-center">
+                        Service is at the heart of Purple Haze. Our team logs over 500 hours of community service annually, extending our impact far beyond the competition field.
+                    </p>
+                </div>
+
+                <div class="value-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
+                        <i class="fas fa-globe-americas text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3 text-center">Diversity & Inclusion</h3>
+                    <p class="text-gray-600 text-center">
+                        We strive to create a culture rooted in innovation and inclusivity, ensuring that every student feels empowered to lead and collaborate with confidence.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative bg-dark rounded-2xl p-12 overflow-hidden text-center text-white">
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <i class="fas fa-quote-left text-4xl text-accent mb-6 opacity-50"></i>
+                    <h2 class="text-2xl md:text-4xl font-bold leading-tight mb-8">
+                        "To develop resilient leaders, prepared for real world challenges, through a team culture rooted in innovation and inclusivity."
+                    </h2>
+                    <p class="text-gray-400 font-semibold tracking-widest uppercase">- Our Vision</p>
+                </div>
+                <div class="absolute top-0 left-0 w-64 h-64 bg-primary opacity-20 rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-64 h-64 bg-accent opacity-10 rounded-full filter blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Contact Us</h3>
+                    <div class="space-y-4 text-gray-400">
+                        <div>
+                            <p class="font-semibold text-white">Workshop Location</p>
+                            <p>Liberal Arts and Science Academy</p>
+                            <p>1012 Arthur Stiles Road</p>
+                            <p>Austin, TX 78721</p>
+                        </div>
+                        <div class="mt-4">
+                            <p class="font-semibold text-white">Mailing Address</p>
+                            <p>LASA Robotics</p>
+                            <p>5900 Balcones Drive #8096</p>
+                            <p>Austin, TX 78731</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-white transition">Team History</a></li>
+                        <li><a href="competition.html" class="text-gray-400 hover:text-white transition">FRC Competition</a></li>
+                        <li><a href="support.html" class="text-gray-400 hover:text-white transition">Sponsor Packet</a></li>
+                        <li><a href="outreach.html" class="text-gray-400 hover:text-white transition">Outreach Events</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-white uppercase tracking-wider">Follow Us</h3>
+                    <p class="text-gray-400 mb-6">Stay up to date with Purple Haze.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 LASA Robotics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
